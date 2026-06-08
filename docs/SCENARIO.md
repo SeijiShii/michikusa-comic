@@ -73,15 +73,16 @@
 ## 5. 現在地カーソル
 
 <!-- AUTO-GENERATED:BEGIN scenario-cursor -->
-- 現在フェーズ: Phase 1 (概念設計)
-- 進行中ターゲット: concept (初回生成完了)
-- 最終更新セッション: D20260609_001_concept_initial
+- 現在フェーズ: Phase 1.5 (デザインシステム) — SoT 生成完了
+- 進行中ターゲット: Phase 2 機能設計の着手待ち
+- 最終更新セッション: D20260609_005_design_system
 - 最終更新時刻: 2026-06-09
-- 完了フェーズ: []
-- 次の推奨アクション: (1) GitHub リポジトリ整備（remote 作成 + push + main 保護 + CI scaffold + Secrets）、(2) /flow:secure --phase=design --scope=concept（Phase 1 完了ゲート）、(3) /flow:estimate → /flow:design
+- 完了フェーズ: [Phase 1 概念設計（concept ✅ / secure ✅ / 初回見積 ✅、※GitHub リポジトリ整備のみ Class B 残）, Phase 1.5 デザイン SoT ✅]
+- 次の推奨アクション: (1) **GitHub リポジトリ整備（Class B、要人間）** — remote 作成 + push + main 保護 + CI scaffold + Secrets、(2) /flow:feature（優先度順: _shared/types → helpers → db → ...）で Phase 2 機能設計、(3) Phase 3 で /flow:design --review-only（画面実装後の視覚レビュー）
 <!-- AUTO-GENERATED:END scenario-cursor -->
 
 ## 6. 変更履歴
 
 - 2026-06-09: /flow:concept で初回生成
 - 2026-06-09: Phase 1 に「GitHub リポジトリ整備」を追加（ユーザー要望 [flow]）
+- 2026-06-09: /flow:auto 連続実行 — secure(design) / account 機能追加(SEC-001) / estimate(初回) / design SoT を完了。Phase 1 + 1.5 のデザイン SoT まで到達
