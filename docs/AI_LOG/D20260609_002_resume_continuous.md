@@ -16,6 +16,8 @@
 |---|---|---|---|---|
 | D20260609-012 | 1 | Phase 1 gate (bootstrap) | /flow:secure --phase=design --scope=concept | 完了 |
 | D20260609-021 | 2 | §3.0c drift shoot | §1.3 に account 機能追加（SEC-001 由来） | 完了 |
+| D20260609-012b | 1.5 | dispatch | /flow:secure 完了 → SEC-001..005 要件化 | 完了 |
+| D20260609-022 | 3 | §3.0 estimate 1回目 | /flow:estimate（initial_20260609.md） | 完了 |
 
 ---
 
