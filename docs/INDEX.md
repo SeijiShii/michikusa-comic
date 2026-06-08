@@ -22,6 +22,7 @@
 | 5 | ❌ | [share](./share/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./share/INDEX.md) |
 | 5 | ❌ | [export](./export/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./export/INDEX.md) |
 | 5 | ❌ | [feedback](./feedback/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./feedback/INDEX.md) |
+| 5 | ❌ | [account](./account/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./account/INDEX.md) |
 
 ## 横断フォルダ
 | 優先度 | フォルダ | 状態 | 設計完了 | INDEX |

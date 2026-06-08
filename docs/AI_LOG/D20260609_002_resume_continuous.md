@@ -14,7 +14,8 @@
 
 | ID | 反復 | 優先度 | auto-pick action | 状態 |
 |---|---|---|---|---|
-| D20260609-012 | 1 | Phase 1 gate (bootstrap) | /flow:secure --phase=design --scope=concept | 進行中 |
+| D20260609-012 | 1 | Phase 1 gate (bootstrap) | /flow:secure --phase=design --scope=concept | 完了 |
+| D20260609-021 | 2 | §3.0c drift shoot | §1.3 に account 機能追加（SEC-001 由来） | 完了 |
 
 ---
 

@@ -56,6 +56,7 @@
 | docs/export/ | 高画質書き出し + PWYW 課金導線（買い切り/投げ銭） | 課金・書き出し画面・Stripe 連携 | gallery, _shared/payments, _shared/storage | 5 | ❌ |
 | docs/feedback/ | 好き嫌いリアクション + バグ報告ウィジェット（PII scrub）| フィードバック UI・送信 API | _shared/auth | 5 | ❌ |
 | docs/legal/ | プライバシーポリシー / 利用規約 / 特商法表記の公開ページ | /legal/* 静的ページ | （なし） | 3 | ❌ |
+| docs/account/ | アカウント/データ管理（ゲスト→連携の段階認証 UI、**セルフサービス全データ削除 = Neon 行 + R2 画像 purge**、開示=自分の全データ閲覧、AI 同意 ON/OFF）[SEC-001/O54 由来] | アカウント/設定/削除画面・削除 API・purge cron | _shared/auth, _shared/db, _shared/storage, gallery | 5 | ❌ |
 
 #### 1.3.2 横断フォルダ（_shared/*）
 
@@ -83,7 +84,7 @@
 - 優先度 2: auth / storage / ai / cost-tracking（db・types に依存）
 - 優先度 3: payments / capture / legal
 - 優先度 4: compose / gallery
-- 優先度 5: collection / share / export / feedback
+- 優先度 5: collection / share / export / feedback / account（[SEC-001] DSR 履行、O54）
 - 優先度 9: app-shell（全依存、常に最後 — O57）
 - 循環依存: なし
 

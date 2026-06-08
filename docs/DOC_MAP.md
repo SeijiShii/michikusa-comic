@@ -2,7 +2,7 @@
 
 **最終更新**: 2026-06-09
 **最新コマンド**: /flow:concept (D20260609_001_concept_initial)
-**統計**: 機能フォルダ 8 / 横断フォルダ 9 / 改修件数 0 / バグ修正件数 0 / クレーム判定件数 0 / Open 論点 3 件
+**統計**: 機能フォルダ 9 / 横断フォルダ 9 / 改修件数 0 / バグ修正件数 0 / クレーム判定件数 0 / Open 論点 3 件 + SEC 5 件(accepted-as-requirement)
 
 > **このファイルは AI 用エントリポイント**。目的別に「どこから読めばいいか」「次に何を Read すべきか」を示す。
 
@@ -43,6 +43,7 @@
 | 5 | ❌ | share | 計画 | [INDEX](./share/INDEX.md) |
 | 5 | ❌ | export | 計画 | [INDEX](./export/INDEX.md) |
 | 5 | ❌ | feedback | 計画 | [INDEX](./feedback/INDEX.md) |
+| 5 | ❌ | account | 計画 | [INDEX](./account/INDEX.md) |
 
 ## 3. 横断フォルダ（_shared/*）
 
