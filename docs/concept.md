@@ -136,6 +136,18 @@ public/               # PWA manifest / service worker / アイコン
 | 出力品質 | 「4 コマらしさ」と絵柄一貫性の安定。解像度段階化でコスト/品質バランス（[論点-002]） | wants リスク |
 | 権利配慮 | 取り込み写真の著作権/肖像権、生成物の権利帰属、シェア時注意喚起（[論点-003]、§9 連携） | wants 重点リスク |
 
+<!-- auto-generated-start -->
+### 3.X セキュリティ要件（auto-added by /flow:secure 2026-06-09）
+
+> `/flow:secure --phase=design` の L1 設計レビューで検出した Critical/High を要件として追記。詳細は `SECURITY_REVIEW_20260609.md`、追跡は §8 [論点-004..008]。
+
+- **[SEC-001] DSR 履行可能性（Critical, legal_required, O54）**: ゲスト/匿名認証では運営が本人特定不能。**in-app セルフサービス全データ削除（Neon 行 + R2 画像 purge）を非交渉の必須機能とする**。開示は gallery の自分の全作品閲覧で履行。§9 法務文言は「運営側で個人を特定できないためアプリ内セルフサービスで完結 / 連携後は窓口対応」と正直に明記し**窓口削除を約束しない**。非アクティブ匿名データの保持期限/自動 purge。運用者向け削除ツールは作らない（匿名で incoherent）
+- **[SEC-002] PII ログ漏洩防止（High, legal_required, O26）**: Sentry `beforeSend` で email/**位置情報(写真 EXIF)**/トークンをマスク。エラー/ログ/アナリティクスに位置・PII を出さない（Vercel Web Analytics は匿名 ID）
+- **[SEC-003] AI 生成エンドポイントのレート制限（High, O27）**: Gemini 画像生成 / Vision を叩く公開エンドポイントに IP/ユーザー単位レート制限（ゲストは厳しめ）。コスト爆発防止（§4.6.2 事後アラートと二重防御）。生成導線への Turnstile 適用検討
+- **[SEC-004] 認可マトリクス（High, O23）**: 全 API ルートで owner resolver（`withOwner`/`requireOwner`）必須、`ownerId = session.userId` 強制。R2 署名 URL は所有者キーのみ発行。feature 設計時に認可マトリクス文書化
+- **[SEC-005] 入力検証（High, O24）**: Zod 等で API 入力スキーマ一元化（写真 MIME/サイズ/枚数上限、テキスト長）。ユーザー供給 URL を fetch しない（SSRF）。セリフのアプリ側合成時はエスケープ
+<!-- auto-generated-end -->
+
 ## 4. 全体アーキテクチャ
 
 ```
@@ -416,6 +428,59 @@ public/               # PWA manifest / service worker / アイコン
 - **判断期限**: legal / capture の設計時（§9 と同期）
 - **担当**: 本人
 
+### [論点-004] [SEC-001] DSR（開示・削除請求）の履行可能性 — ゲスト認証 × 窓口削除: Critical
+- **status**: `accepted-as-requirement`
+- **status 履歴**: 2026-06-09 open → 2026-06-09 accepted-as-requirement（/flow:secure design、§3.X SEC-001 に要件化）
+- **影響範囲**: §1.1 / §1.3（account 機能追加） / §3 NFR / §5 / §9
+- **観点 ID**: O54_dsr_fulfillment_operability（legal_required）
+- **severity**: Critical
+- **検出根拠**: §9 がゲスト認証下で「開示請求窓口」を約束しているが運営は本人特定不能。§1.3 にセルフサービス削除導線が不在
+- **詰めるべき問い**: (1) account（データ管理/削除）機能を §1.3 に追加するか（推奨: する）(2) §9 文言をゲスト前提に是正するか（推奨: する）
+- **推奨**: §1.3 に account 機能追加 + セルフ全データ削除（DB + R2 purge）実装 + §9 文言是正（窓口削除を約束しない）
+- **判断期限**: feature 設計着手前（最優先）
+- **担当**: 本人
+- **L1 レポート**: `./SECURITY_REVIEW_20260609.md#sec-001`
+
+### [論点-005] [SEC-002] PII ログ漏洩（位置情報・写真メタ）: High
+- **status**: `accepted-as-requirement`
+- **status 履歴**: 2026-06-09 open → 2026-06-09 accepted-as-requirement（§3.X SEC-002）
+- **影響範囲**: §3 NFR / 監視（Sentry） / アナリティクス
+- **観点 ID**: O26_pii_logging（legal_required）
+- **severity**: High
+- **推奨**: Sentry beforeSend で PII/位置マスク、ログ/イベントに位置・PII を出さない
+- **判断期限**: 監視組込時
+- **L1 レポート**: `./SECURITY_REVIEW_20260609.md#sec-002`
+
+### [論点-006] [SEC-003] AI 生成エンドポイントのレート制限: High
+- **status**: `accepted-as-requirement`
+- **status 履歴**: 2026-06-09 open → 2026-06-09 accepted-as-requirement（§3.X SEC-003）
+- **影響範囲**: §3 NFR / §4.3 / §4.6.2 / compose / _shared/ai
+- **観点 ID**: O27_rate_limit_scope
+- **severity**: High
+- **推奨**: 生成エンドポイントに IP/ユーザー単位レート制限（ゲスト厳しめ）+ Turnstile 検討、コスト爆発防止
+- **判断期限**: compose / _shared/ai 設計時
+- **L1 レポート**: `./SECURITY_REVIEW_20260609.md#sec-003`
+
+### [論点-007] [SEC-004] 認可マトリクス（所有者チェック）: High
+- **status**: `accepted-as-requirement`
+- **status 履歴**: 2026-06-09 open → 2026-06-09 accepted-as-requirement（§3.X SEC-004）
+- **影響範囲**: §3 NFR / §5 / §6 / _shared/auth / 全 feature API
+- **観点 ID**: O23_authorization_check
+- **severity**: High
+- **推奨**: 全 API で owner resolver 必須、R2 署名 URL は所有者キーのみ、認可マトリクス文書化
+- **判断期限**: _shared/auth + 各 feature 設計時
+- **L1 レポート**: `./SECURITY_REVIEW_20260609.md#sec-004`
+
+### [論点-008] [SEC-005] 入力検証（アップロード/テキスト/SSRF）: High
+- **status**: `accepted-as-requirement`
+- **status 履歴**: 2026-06-09 open → 2026-06-09 accepted-as-requirement（§3.X SEC-005）
+- **影響範囲**: §3 NFR / §5 / §6 / capture / compose
+- **観点 ID**: O24_input_validation
+- **severity**: High
+- **推奨**: Zod で入力スキーマ一元化（MIME/サイズ/枚数/テキスト長）、ユーザー供給 URL を fetch しない、セリフ合成時エスケープ
+- **判断期限**: capture / compose 設計時
+- **L1 レポート**: `./SECURITY_REVIEW_20260609.md#sec-005`
+
 ## 9. 法務・コンプライアンス書類
 
 > 公開 PJ（写真アップロード + AI 送信 + PWYW 金銭授受あり）。プライバシーポリシー必須、有償導線があるため特商法表記も必須。
@@ -438,6 +503,7 @@ public/               # PWA manifest / service worker / アイコン
 - 作成手段: 自前ドラフト（テンプレ参考）+ 公開前に内容確認。`docs/legal/` に原稿、公開時 `/legal/*`
 - 公開導線: フッタリンク + 初回起動時の AI 送信同意（写真を AI に送る旨を明示）
 - 改訂時: AI プロバイダ追加 / 取得項目変更で再告知
+- **⚠️ ゲスト認証下の DSR 履行（[SEC-001] / O54、Critical）**: ゲスト/匿名ユーザーは運営が本人特定不能のため、プラポリは「運営側で個人を特定できないため、データの確認・削除はアプリ内のセルフサービス機能でご自身で行える / アカウント連携後は窓口でも対応」と正直に明記し、**窓口削除を約束しない**。これに伴い §1.3 に **account（データ管理/削除）機能**を追加（in-app セルフ全データ削除 = Neon 行 + R2 画像 purge、開示は gallery の自分の全作品閲覧で履行）。非アクティブ匿名データの保持期限/自動 purge を設ける
 
 ### 9.4 特定商取引法（日本国内 + 有償）
 - 販売事業者 / 代表者 / 所在地（請求時開示で省略可）/ 連絡先 / 価格・支払・引渡・返品条件 → 有償導線（高画質書き出し買い切り）公開前に整備
