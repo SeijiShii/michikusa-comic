@@ -1,0 +1,18 @@
+# secrets
+.env
+.env.*.local
+.env.local
+*.pem
+
+# deps / build
+node_modules/
+dist/
+.vercel/
+.turbo/
+
+# OS / editor
+.DS_Store
+*.log
+
+# exports (収益・データ書き出しは版管理しない)
+exports/
