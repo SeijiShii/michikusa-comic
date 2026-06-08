@@ -226,4 +226,19 @@
     [flow] タグのため flow-suite テンプレ（Step 5.47.2）への反映候補を
     ~/.claude/flow-data/command-feedback-inbox.md CF-20260609-001 に capture（PJ セッションのため
     本体編集はせず capture-only、flow-suite メンテ時にユーザー確認を経て適用）。
+
+- id: D20260609-011
+  timestamp: 2026-06-09T11:45:00+09:00
+  command: /flow:concept
+  phase: Step 7.7 Git 自動コミット
+  question: concept 生成物を git init + commit するか
+  options:
+    - git init + .gitignore + 初回コミット (recommended)
+    - init しない
+  recommended: git init + commit
+  chosen: git init → .gitignore（.env 除外）→ docs/ + README を 1 commit（main, 58352d1）
+  chosen_type: explicit-choice
+  depends_on: []
+  context: |
+    .git 不在 → ユーザー承認で init。push は未実施（手動）。秘密情報 staging なし確認済。
 ```

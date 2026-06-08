@@ -2,7 +2,7 @@
 
 **最終更新**: 2026-06-09
 **総セッション数**: 1
-**総 decision 数**: 10
+**総 decision 数**: 11
 
 > このフォルダは AI 主導の自走 / 後追いトレースを目的とする詳細ログ。
 > セッションごとに 1 ファイル、append-only、過去ファイルは削除・編集禁止。
@@ -14,7 +14,7 @@
 
 | ファイル | 実行日 | コマンド | 対象 | decision 範囲 | 状態 |
 |---|---|---|---|---|---|
-| [D20260609_001_concept_initial.md](./D20260609_001_concept_initial.md) | 2026-06-09 | /flow:concept | initial | D20260609-001〜010 | 完了 |
+| [D20260609_001_concept_initial.md](./D20260609_001_concept_initial.md) | 2026-06-09 | /flow:concept | initial | D20260609-001〜011 | 完了 |
 
 ## decision_id 索引（grep 用、新しい順）
 
