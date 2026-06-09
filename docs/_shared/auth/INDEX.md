@@ -15,6 +15,7 @@
 | 002 | 002__shared_auth_PLAN.md | PLAN | 設計済 | 2026-06-09 | guestSession 本番経路, withOwner, 3 Phase |
 | 003 | 003__shared_auth_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | 401/200, 匿名→authed 結合(P4.46 DoD) |
 | (E2E) | — | — | skip | — | capture/account 側でカバー |
+| 101 | 101__shared_auth_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | owner resolver 6テストgreen, ゲスト本番経路は release |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 auth 行

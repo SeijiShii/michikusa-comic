@@ -15,6 +15,7 @@
 | 002 | 002__shared_cost-tracking_PLAN.md | PLAN | 設計済 | 2026-06-09 | pricing/record/aggregate/alert, 3 Phase |
 | 003 | 003__shared_cost-tracking_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | 閾値境界, 単価未設定, cov 85% |
 | (E2E) | — | — | skip | — | cross-cutting |
+| 101 | 101__shared_cost-tracking_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | pricing 4テストgreen, record/aggregate後続 |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 cost-tracking 行
