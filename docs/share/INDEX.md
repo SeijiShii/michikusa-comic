@@ -15,6 +15,7 @@
 | 002 | 002_share_PLAN.md | PLAN | 設計済 | 2026-06-09 | ShareButton/useShareImage, 2 Phase |
 | 003 | 003_share_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | strip適用, cov 80% |
 | 004 | 004_share_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | 共有/注意喚起, Level1+2 |
+| 101 | 101_share_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | ShareButton(合成共有/SEC-002) 実装, navigator.share連携後続 |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |
