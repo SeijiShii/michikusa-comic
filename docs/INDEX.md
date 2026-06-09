@@ -29,7 +29,7 @@
 |---|---|---|---|---|
 | 1 | [_shared/types](./_shared/types/) | 設計済 | ✅ 2026-06-09 | [INDEX](./_shared/types/INDEX.md) |
 | 1 | [_shared/helpers](./_shared/helpers/) | 計画 | ❌ | [INDEX](./_shared/helpers/INDEX.md) |
-| 1 | [_shared/db](./_shared/db/) | 計画 | ❌ | [INDEX](./_shared/db/INDEX.md) |
+| 1 | [_shared/db](./_shared/db/) | 設計済 | ✅ 2026-06-09 | [INDEX](./_shared/db/INDEX.md) |
 | 2 | [_shared/auth](./_shared/auth/) | 計画 | ❌ | [INDEX](./_shared/auth/INDEX.md) |
 | 2 | [_shared/storage](./_shared/storage/) | 計画 | ❌ | [INDEX](./_shared/storage/INDEX.md) |
 | 2 | [_shared/ai](./_shared/ai/) | 計画 | ❌ | [INDEX](./_shared/ai/INDEX.md) |

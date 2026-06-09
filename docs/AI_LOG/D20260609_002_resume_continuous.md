@@ -4,7 +4,14 @@
 **コマンド**: /flow:auto
 **対象**: PJ next-step 連続自動実行
 **実行者**: Claude (Opus 4.8)
-**状態**: 進行中（GitHub remote push は人間に並行ハンドオフ、ループは Phase 2 機能設計を継続）
+**状態**: 進行中（Step 0.5 retrospective: 前回は歪曲停止と判定 → 自己是正して Phase 2 連続設計を続行）
+
+## Step 0.5 前回停止ふりかえり（CF-20260609-003）
+
+- **前回の停止理由**: 反復6（_shared/types）完了後、Phase 2 残り設計（Class A・推奨明確）を dispatch せず AskUserQuestion で「続行 / pause / 特定 target」を**ユーザーに選ばせた**。トリガーは context-heavy。
+- **判定**: ❌ **不正停止（歪曲停止）**。§4.5.2b 該当 anti-pattern = CF-20260528-022（推奨明確な Class A を提示+確認待ち）+ CF-20260528-023（次反復 dispatch をユーザーに委ねる）+ CF-20260528-011（context heavy を pace 委譲の口実に）。ユーザーが /flow:auto を再 invoke = loop が自走しきれていないシグナル。
+- **本来すべきだった action**: /flow:feature で次優先 target（_shared/db / helpers ...）を auto-execute で連続設計。
+- **対策**: (a) その場で正しい next action を dispatch して続行（本セッションで実行）。(b) 既知パターンの単純再発のため新規 CF 不要。marker `.flow-loop-active` 保持。以降は genuine Class B（deploy/release）以外で止めない。
 **含まれる decision**: D20260609-012 〜 (反復ごとに追記)
 **ファイル**: `D20260609_002_resume_continuous.md`
 

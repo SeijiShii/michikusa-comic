@@ -11,7 +11,10 @@ DB スキーマ・マイグレーション（Neon Postgres + Drizzle スキー�
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature _shared/db` で生成) |
+| 001 | 001__shared_db_SPEC.md | SPEC | 設計済 | 2026-06-09 | Drizzle 9 テーブル、所有権 app 層担保(SEC-004)、cascade 削除(DSR) |
+| 002 | 002__shared_db_PLAN.md | PLAN | 設計済 | 2026-06-09 | src/db/ 5 ファイル、3 Phase |
+| 003 | 003__shared_db_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | test DB、cascade/一意/FK、cov 80% |
+| (E2E) | — | — | skip | — | cross-cutting スキップ |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 db 行
