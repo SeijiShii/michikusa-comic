@@ -14,7 +14,7 @@
 ## 機能フォルダ
 | 優先度 | 基盤 | フォルダ | 状態 | 設計完了 | 改修件数 | バグ修正件数 | クレーム件数 | INDEX |
 |---|---|---|---|---|---|---|---|---|
-| 3 | ❌ | [capture](./capture/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./capture/INDEX.md) |
+| 3 | ❌ | [capture](./capture/) | 設計済 | ✅ 2026-06-09 | 0 | 0 | 0 | [INDEX](./capture/INDEX.md) |
 | 3 | ❌ | [legal](./legal/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./legal/INDEX.md) |
 | 4 | ❌ | [compose](./compose/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./compose/INDEX.md) |
 | 4 | ❌ | [gallery](./gallery/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./gallery/INDEX.md) |

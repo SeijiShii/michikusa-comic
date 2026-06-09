@@ -11,7 +11,10 @@
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature capture` で生成) |
+| 001 | 001_capture_SPEC.md | SPEC | 設計済 | 2026-06-09 | 写真取込+ひとこと+メタ, SEC-004/005, offline下書き |
+| 002 | 002_capture_PLAN.md | PLAN | 設計済 | 2026-06-09 | CaptureScreen/usePhotoUpload/offlineQueue |
+| 003 | 003_capture_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | 検証/所有者キー/オフライン, cov 80% |
+| 004 | 004_capture_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | 取込/不正/オフライン, Level1+2 |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |
