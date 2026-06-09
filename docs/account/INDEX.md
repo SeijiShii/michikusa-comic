@@ -11,7 +11,10 @@
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature account` で生成) |
+| 001 | 001_account_SPEC.md | SPEC | 設計済 | 2026-06-09 | セルフ全データ削除(db+R2 purge) SEC-001/O54 DSR 非交渉, 段階認証, 開示 |
+| 002 | 002_account_PLAN.md | PLAN | 設計済 | 2026-06-09 | delete(cascade+purge)/link/cron, 3 Phase |
+| 003 | 003_account_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | 削除協調(DSR), cov 85% |
+| 004 | 004_account_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | 削除→db+R2残置0, 開示, Level1+2 |
 
 ## 関連
 - 親 concept: `../concept.md` §1.3.1 account 行
