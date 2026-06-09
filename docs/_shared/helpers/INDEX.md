@@ -15,6 +15,8 @@
 | 002 | 002__shared_helpers_PLAN.md | PLAN | 設計済 | 2026-06-09 | src/lib/ 6 ファイル、3 Phase |
 | 003 | 003__shared_helpers_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | jsdom+canvas、cov 85% |
 | (E2E) | — | — | skip | — | cross-cutting スキップ |
+| 101 | 101__shared_helpers_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | 純関数10テストgreen, 画像処理は後続 |
+| 102 | 102__shared_helpers_UNIT_TEST_REPORT.md | UNIT_TEST_REPORT | 一部実装 | 2026-06-09 | 10 passed |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 helpers 行
