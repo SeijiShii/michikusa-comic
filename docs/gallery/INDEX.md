@@ -11,7 +11,10 @@
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature gallery` で生成) |
+| 001 | 001_gallery_SPEC.md | SPEC | 設計済 | 2026-06-09 | 時系列/エリア別, DSR開示履行(O54), SEC-004 |
+| 002 | 002_gallery_PLAN.md | PLAN | 設計済 | 2026-06-09 | GalleryScreen/ComicDetail, 3 Phase |
+| 003 | 003_gallery_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | owner境界, cov 80% |
+| 004 | 004_gallery_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | 一覧/フィルタ/詳細, Level1+2 |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |
