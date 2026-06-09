@@ -15,6 +15,7 @@
 | 002 | 002__shared_ai_PLAN.md | PLAN | 設計済 | 2026-06-09 | interface→mock→実SDK, 3 Phase |
 | 003 | 003__shared_ai_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | SDK mock, レート/フォールバック, cov 80% |
 | (E2E) | — | — | skip | — | compose 側 |
+| 101 | 101__shared_ai_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | prompts/plan 2テストgreen(差別化), SDK後続 |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 ai 行

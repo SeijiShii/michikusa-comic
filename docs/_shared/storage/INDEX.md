@@ -15,6 +15,7 @@
 | 002 | 002__shared_storage_PLAN.md | PLAN | 設計済 | 2026-06-09 | r2/keys/purge, 3 Phase |
 | 003 | 003__shared_storage_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | sdk-mock, 他人キー拒否, purge |
 | (E2E) | — | — | skip | — | capture/account 側 |
+| 101 | 101__shared_storage_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | keys 3テストgreen(SEC-004境界), R2 client後続 |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 storage 行
