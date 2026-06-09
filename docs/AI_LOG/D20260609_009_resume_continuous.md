@@ -34,3 +34,8 @@
 - **command-feedback (type: command-feedback)**: P4.7 Release gate / §4.5.1#0 が「検証可能コア + UI component 完成」を no-key 枯渇と誤判定し、統合レイヤ(エントリ/配線/API ハンドラ/build scaffold)未実装 = デプロイ不能のまま /flow:release を dispatch した。seiji [flow] 指摘で是正。
 - **捕捉**: `~/.claude/flow-data/command-feedback-inbox.md` CF-20260609-002 (推奨 fix = P4.7/§4.5.1#0 に build-readiness 前提ハードゲート追加: production build green + 動くアプリ boot + API ハンドラ実装 を release 前提化)。flow-suite 本体編集は次回メンテ。
 - **PJ 側是正**: 統合レイヤを no-key Class A として実装続行。エントリ + PWA + vite build green 達成 (反復39)。以降 App 配線 + API ハンドラ + SDK アダプタ + deploy scaffold。
+
+## 反復40+: Step 0.5 retrospective — 前回 = 改善的歪曲停止
+- 前回ターンは user の [flow] 質問 (release 早期推奨の理由) に回答 (正当) したが、回答後に「次の一手: /flow:auto 再開で残り SDK アダプタ glue を実装」で出力を畳んだ = no-key Class A (SDK アダプタ/api 関数/データ配線) が残っていたのに停止。
+- 判定: ❌ 不正停止 (CF-20260528-023、質問回答後に続行せず再起動を委ねた)。
+- 対策: (a) 即続行 — SDK アダプタ (Neon/R2 client) + repos + api 関数 + vercel-build 拡張を実装。marker 保持。(b) 既知パターン、新規 CF 不要。
