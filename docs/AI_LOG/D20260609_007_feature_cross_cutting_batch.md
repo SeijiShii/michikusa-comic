@@ -21,6 +21,7 @@
 | D20260609-029 | _shared/storage | R2 署名URL/キー ownerId境界(SEC-004)/purgeOwner(DSR) | 完了 |
 | D20260609-030 | _shared/ai | Vision+Gemini ラッパ, 差別化プロンプト, SEC-003 レート制限, コスト積算 | 完了 |
 | D20260609-031 | _shared/cost-tracking | 呼び出し積算+.env単価+無料枠アラート(§4.6.2) | 完了 |
+| D20260609-032 | _shared/payments | Stripe 単発 PWYW + Webhook 署名検証 | 完了 |
 
 ## Decisions
 ```yaml

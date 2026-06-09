@@ -34,7 +34,7 @@
 | 2 | [_shared/storage](./_shared/storage/) | 設計済 | ✅ 2026-06-09 | [INDEX](./_shared/storage/INDEX.md) |
 | 2 | [_shared/ai](./_shared/ai/) | 設計済 | ✅ 2026-06-09 | [INDEX](./_shared/ai/INDEX.md) |
 | 2 | [_shared/cost-tracking](./_shared/cost-tracking/) | 設計済 | ✅ 2026-06-09 | [INDEX](./_shared/cost-tracking/INDEX.md) |
-| 3 | [_shared/payments](./_shared/payments/) | 計画 | ❌ | [INDEX](./_shared/payments/INDEX.md) |
+| 3 | [_shared/payments](./_shared/payments/) | 設計済 | ✅ 2026-06-09 | [INDEX](./_shared/payments/INDEX.md) |
 | 9 | [_shared/app-shell](./_shared/app-shell/) | 計画 | ❌ | [INDEX](./_shared/app-shell/INDEX.md) |
 
 ## 見積もり
