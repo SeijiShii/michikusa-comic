@@ -11,7 +11,10 @@
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature _shared/auth` で生成) |
+| 001 | 001__shared_auth_SPEC.md | SPEC | 設計済 | 2026-06-09 | Clerk ゲスト→段階認証(O22) + owner resolver(SEC-004) + 本番経路(P4.46) |
+| 002 | 002__shared_auth_PLAN.md | PLAN | 設計済 | 2026-06-09 | guestSession 本番経路, withOwner, 3 Phase |
+| 003 | 003__shared_auth_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | 401/200, 匿名→authed 結合(P4.46 DoD) |
+| (E2E) | — | — | skip | — | capture/account 側でカバー |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 auth 行
