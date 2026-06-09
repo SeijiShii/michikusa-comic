@@ -73,12 +73,12 @@
 ## 5. 現在地カーソル
 
 <!-- AUTO-GENERATED:BEGIN scenario-cursor -->
-- 現在フェーズ: Phase 2 (機能設計) — **全 18 target 設計完了 + refined 見積完了**
-- 進行中ターゲット: Phase 3 実装の着手待ち（spec-review → tdd → e2e）
-- 最終更新セッション: D20260609_008_feature_features_batch
+- 現在フェーズ: Phase 3 (実装) — **no-key Class A 基盤を全実装、Release gate (P4.7) 到達**
+- 進行中ターゲット: Release 工程（実キー FILL + SDK 統合検証 + デプロイ）= Class C/B、要人間
+- 最終更新セッション: D20260609_009_resume_continuous
 - 最終更新時刻: 2026-06-09
-- 完了フェーズ: [Phase 1 概念設計（※GitHub remote push のみ Class B 残）, Phase 1.5 デザイン SoT, Phase 2 機能設計（横断8+機能9+app-shell の SPEC/PLAN/UNIT/E2E + initial/refined 見積）]
-- 次の推奨アクション: (1) /flow:spec-review（各 target、tdd 着手前の品質ゲート P3.7、Class A）、(2) **Phase 3 実装** = プロジェクト scaffold（package.json/src）→ /flow:tdd で優先度順実装（基盤→app-shell）→ /flow:e2e、(3) Phase 4 で /flow:design --review-only + /flow:release（実キー + デプロイ、Class B/C）。※GitHub remote push（あなた保留中）も Phase 1 残
+- 完了フェーズ: [Phase 1 概念設計, Phase 1.5 デザイン SoT, Phase 2 機能設計(全18), Phase 3 no-key 実装(バックエンド検証可能コア + P4.46 ゲスト経路 + 全9機能UI + app-shell 合成、70テスト green)]
+- 次の推奨アクション: **/flow:release**（実キー FILL → SDK 統合(Clerk/R2/Stripe/AI/Neon)検証 → ローカル実機確認 → デプロイ、Class C/B = 要人間）。並行: GitHub remote push（Phase 1 残）。残: 実 SDK glue + 統合 E2E（実キーで verify）
 <!-- AUTO-GENERATED:END scenario-cursor -->
 
 ## 6. 変更履歴

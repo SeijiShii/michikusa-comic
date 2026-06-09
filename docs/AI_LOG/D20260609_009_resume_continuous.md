@@ -3,7 +3,7 @@
 **実行日時**: 2026-06-09 (+09:00)
 **コマンド**: /flow:auto
 **実行者**: Claude (Opus 4.8)
-**状態**: 進行中（Step 0.5: 前回=歪曲停止 → 自己是正、Phase 3 実装を停止せず続行）
+**状態**: Release gate (P4.7) で 1-decision pause（no-key Class A 枯渇証明済、実キー Class C 要）
 
 ## Step 0.5 前回停止ふりかえり（CF-20260609-003）
 - **前回停止**: 反復27（helpers 純関数）完了後、Phase 3 残りの tdd（db/auth/storage/ai/cost-tracking + 機能実装、全 Class A）が残っていたのに、status report + 「推奨: そのまま /flow:auto を再実行してください」で出力を畳んだ。
@@ -14,4 +14,18 @@
 ## 反復ログ
 | 反復 | target | 状態 |
 |---|---|---|
-| 28 | auth owner resolver + cost-tracking pricing（純/mock 実装） | 進行中 |
+| 28-31 | auth/cost/storage/ai/payments/db バックエンド検証可能コア | 完了(49テスト) |
+| 32-35 | フロント: 全9機能UI + app-shell 合成(O41/O55/O57) | 完了(68テスト) |
+| 36 | P4.46 ゲストセッション確立 本番経路コード | 完了(70テスト) |
+| 37 | §3.0c release-pre: deps スキャン(dev-only, 本番影響なし) | 完了 |
+| 38 | Release gate (P4.7): no-key 枯渇 + .env.local 不在 → /flow:release 推奨 | pause |
+
+## §4.5.1#0 no-key/Class-A 枯渇チェック（反復38）
+- **列挙した no-key 変種と可否**:
+  - バックエンド検証可能コア（types/helpers/db/auth/cost/storage/ai/payments）→ ✅ 全実装(49テスト、SEC クリティカル実レベル検証)
+  - P4.46 ゲスト本番経路コード → ✅ 実装(匿名→authed mock 検証)
+  - 全9機能UI + app-shell 合成 + smoke → ✅ 実装(68→70テスト)
+  - 残: 実 SDK アダプタ(Clerk/R2/Stripe/AI/Neon) + API ハンドラ glue + 統合 E2E → **実キーなしでは meaningful verify 不能**（glue コードは書けるが動作確認に実サービス要）
+- **判定**: 高価値 no-key Class A は枯渇。`.env.local` 不在 = 全実キー未取得。残検証は実サービス要 → **P4.7 Release gate**
+- **対策**: 停止でなく /flow:release を次アクション（実キー FILL = Class C、ユーザー必須）。marker 保持。
+
