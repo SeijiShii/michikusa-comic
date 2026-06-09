@@ -11,7 +11,10 @@
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature _shared/app-shell` で生成) |
+| 001 | 001__shared_app-shell_SPEC.md | SPEC | 設計済 | 2026-06-09 | 合成レイヤ(O57): ルート+配線+APIハンドラ層+Clerk確立+PWA |
+| 002 | 002__shared_app-shell_PLAN.md | PLAN | 設計済 | 2026-06-09 | main/App/providers/api/PWA, 3 Phase(O35/36/37) |
+| 003 | 003__shared_app-shell_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | router/providers/ハンドラ, cov 70% |
+| 004 | 004__shared_app-shell_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | app smoke(O57): 起動+全到達+匿名→authed200(P4.46) |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 app-shell 行

@@ -4,7 +4,7 @@
 **コマンド**: /flow:feature（連続設計モード、機能フォルダ）
 **対象**: 機能フォルダ（feature）の連続設計（capture から、優先度順）
 **実行者**: Claude (Opus 4.8)
-**状態**: 進行中
+**状態**: 完了（Phase 2 全 target 設計完了）
 **含まれる decision**: D20260609-033 〜
 **呼び出し元**: /flow:auto (D20260609_002 反復 14+、Phase 2)
 
@@ -24,6 +24,7 @@
 | D20260609-039 | export | 高画質書き出し+PWYW課金, O43価格透明性 | 完了 |
 | D20260609-040 | feedback | 好き嫌い+バグ報告, PII scrub(SEC-002), O40二重シンク | 完了 |
 | D20260609-041 | account | セルフ全データ削除(db+R2 purge) SEC-001/O54 DSR 非交渉, 段階認証 | 完了 |
+| D20260609-042 | _shared/app-shell | 合成レイヤ(O57): ルート+配線+APIハンドラ層+Clerk確立+PWA | 完了 |
 
 ## Decisions
 ```yaml
