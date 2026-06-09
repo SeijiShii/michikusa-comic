@@ -15,6 +15,7 @@
 | 002 | 002_capture_PLAN.md | PLAN | 設計済 | 2026-06-09 | CaptureScreen/usePhotoUpload/offlineQueue |
 | 003 | 003_capture_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | 検証/所有者キー/オフライン, cov 80% |
 | 004 | 004_capture_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | 取込/不正/オフライン, Level1+2 |
+| 101 | 101_capture_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | CaptureScreen UI 4 RTLテストgreen, upload後続 |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |

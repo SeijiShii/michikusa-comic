@@ -1,0 +1,11 @@
+:root {
+  --bg-base: #F7F3EC; --bg-surface: #FFFFFF; --bg-sunken: #EFE9DE;
+  --text-primary: #3A352E; --text-secondary: #7A7264; --border-soft: #E2DACC;
+  --brand-primary: #7E9B6E; --brand-primary-ink: #FFFFFF;
+  --accent-sky: #8FB8C9; --accent-warm: #E0A66B;
+  --state-success: #7E9B6E; --state-warning: #D9A441; --state-danger: #C77B6B;
+  --radius-sm: 8px; --radius-md: 14px; --radius-lg: 22px;
+  --shadow-card: 0 2px 12px rgba(58,53,46,0.06);
+  --space-1: 4px; --space-2: 8px; --space-3: 12px; --space-4: 16px; --space-6: 24px; --space-8: 32px;
+  --tap-min: 44px;
+}
