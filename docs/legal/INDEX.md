@@ -15,6 +15,7 @@
 | 002 | 002_legal_PLAN.md | PLAN | 設計済 | 2026-06-09 | 3ページ+フッタ+ConsentBanner |
 | 003 | 003_legal_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | 必須文言検出, cov 75% |
 | 004 | 004_legal_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | フッタ到達(O55), 同意 |
+| 101 | 101_legal_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | PrivacyPolicy(AI送信明示/SEC-001 DSR文言) 2 RTLテストgreen, 規約/特商法後続 |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |

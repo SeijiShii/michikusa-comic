@@ -15,6 +15,7 @@
 | 002 | 002_gallery_PLAN.md | PLAN | 設計済 | 2026-06-09 | GalleryScreen/ComicDetail, 3 Phase |
 | 003 | 003_gallery_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | owner境界, cov 80% |
 | 004 | 004_gallery_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | 一覧/フィルタ/詳細, Level1+2 |
+| 101 | 101_gallery_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | GalleryScreen(空状態/一覧) 2 RTLテストgreen, useComics/API後続 |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |

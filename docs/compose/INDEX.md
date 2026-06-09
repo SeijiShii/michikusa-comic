@@ -15,6 +15,7 @@ AI 4 コマ生成（コマ割り提案 + セリフ案 + 絵柄 stylize）+ ア�
 | 002 | 002_compose_PLAN.md | PLAN | 設計済 | 2026-06-09 | ComposeScreen/PanelCanvas, 4 Phase |
 | 003 | 003_compose_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | rate limit/合成/XSS, cov 80% |
 | 004 | 004_compose_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | 生成→保存, O45進捗, Level1-3 |
+| 101 | 101_compose_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | SpeechEditor 1 RTLテストgreen, 生成/PanelCanvas([論点-001])後続 |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |
