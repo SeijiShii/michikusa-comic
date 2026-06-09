@@ -16,6 +16,7 @@
 | ID | target | 設計要点 | 状態 |
 |---|---|---|---|
 | D20260609-026 | _shared/db | Drizzle 9 テーブル、所有権 app 層(SEC-004)、cascade 削除(DSR) | 完了 |
+| D20260609-027 | _shared/helpers | 日付/エリア/画像/検証/PII scrub 純関数、stripGeoExif(SEC-002) | 完了 |
 
 ## Decisions
 ```yaml
