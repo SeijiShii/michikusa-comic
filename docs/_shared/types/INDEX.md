@@ -15,6 +15,8 @@
 | 002 | 002__shared_types_PLAN.md | PLAN | 設計済 | 2026-06-09 | src/types/ 5 ファイル、3 Phase |
 | 003 | 003__shared_types_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | parse 正常/異常/境界、cov 90% |
 | (E2E) | — | — | skip | — | cross-cutting のためスキップ |
+| 101 | 101__shared_types_IMPL_REPORT.md | IMPL_REPORT | 実装済 | 2026-06-09 | 13テスト green + typecheck PASS |
+| 102 | 102__shared_types_UNIT_TEST_REPORT.md | UNIT_TEST_REPORT | 実装済 | 2026-06-09 | vitest 13 passed |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 types 行
