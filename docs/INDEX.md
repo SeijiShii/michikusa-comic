@@ -20,7 +20,7 @@
 | 4 | ❌ | [gallery](./gallery/) | 設計済 | ✅ 2026-06-09 | 0 | 0 | 0 | [INDEX](./gallery/INDEX.md) |
 | 5 | ❌ | [collection](./collection/) | 設計済 | ✅ 2026-06-09 | 0 | 0 | 0 | [INDEX](./collection/INDEX.md) |
 | 5 | ❌ | [share](./share/) | 設計済 | ✅ 2026-06-09 | 0 | 0 | 0 | [INDEX](./share/INDEX.md) |
-| 5 | ❌ | [export](./export/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./export/INDEX.md) |
+| 5 | ❌ | [export](./export/) | 設計済 | ✅ 2026-06-09 | 0 | 0 | 0 | [INDEX](./export/INDEX.md) |
 | 5 | ❌ | [feedback](./feedback/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./feedback/INDEX.md) |
 | 5 | ❌ | [account](./account/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./account/INDEX.md) |
 

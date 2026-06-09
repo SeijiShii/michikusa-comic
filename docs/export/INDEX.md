@@ -11,7 +11,10 @@
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature export` で生成) |
+| 001 | 001_export_SPEC.md | SPEC | 設計済 | 2026-06-09 | 高画質書き出し+PWYW課金, O43価格透明性, [論点-002] |
+| 002 | 002_export_PLAN.md | PLAN | 設計済 | 2026-06-09 | ExportScreen/checkout/render, 2 Phase |
+| 003 | 003_export_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | 課金ゲート/O43, cov 80% |
+| 004 | 004_export_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | 課金(test)→書き出し, O43 |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |
