@@ -1,9 +1,17 @@
 import { useState } from "react";
 import { LegalFooter } from "../components/LegalFooter.js";
+import { CaptureScreen } from "../features/capture/CaptureScreen.js";
+import { GalleryScreen } from "../features/gallery/GalleryScreen.js";
+import { DeleteAllData } from "../features/account/DeleteAllData.js";
+import { FeedbackWidget } from "../features/feedback/FeedbackWidget.js";
+import { PrivacyPolicy } from "../features/legal/PrivacyPolicy.js";
 
 export type Route = "/" | "/gallery" | "/account" | "/legal/privacy" | "/legal/terms" | "/legal/specified-commercial-transactions";
 
-// 合成レイヤ (O57): 全画面を 1 つの動くアプリに組み立てる最小ルーター + フッタ導線(O55)
+const APP_VERSION = "0.1.0";
+
+// 合成レイヤ (O57): 実 feature コンポーネントを配線した動くアプリ
+// ※ データ永続 (アップロード/生成/削除の実行) は SDK アダプタ + 実キー (release) で接続
 export function App() {
   const [route, setRoute] = useState<Route>("/");
   const nav = (p: string) => setRoute(p as Route);
@@ -17,11 +25,18 @@ export function App() {
         </nav>
       </header>
       <main data-route={route}>
-        {route === "/" && <p>散歩で見つけた風景を、4 コマにして残すアプリ</p>}
-        {route === "/gallery" && <h1>ギャラリー</h1>}
-        {route === "/account" && <h1>設定</h1>}
-        {route.startsWith("/legal") && <h1>法務</h1>}
+        {route === "/" && (
+          <CaptureScreen onSubmit={(files, caption) => { /* TODO: usePhotoUpload (storage/api, release) */ void files; void caption; nav("/gallery"); }} />
+        )}
+        {route === "/gallery" && (
+          <GalleryScreen comics={[]} onOpen={(id) => { void id; /* TODO: useComics (db/api) */ }} />
+        )}
+        {route === "/account" && (
+          <DeleteAllData onConfirmDelete={() => { /* TODO: api/account/delete (db cascade + R2 purge, release) */ }} />
+        )}
+        {route.startsWith("/legal") && <PrivacyPolicy />}
       </main>
+      <FeedbackWidget route={route} appVersion={APP_VERSION} onSend={(p) => { void p; /* TODO: api/feedback */ }} />
       <LegalFooter onNavigate={nav} />
     </div>
   );
