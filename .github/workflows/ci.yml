@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # コードが未 scaffold の間は green を維持（package.json 出現後に各ステップが有効化）
+      - name: Detect package.json
+        id: detect
+        run: |
+          if [ -f package.json ]; then echo "exists=true" >> "$GITHUB_OUTPUT"; else echo "exists=false" >> "$GITHUB_OUTPUT"; fi
+
+      - name: Setup Node
+        if: steps.detect.outputs.exists == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        if: steps.detect.outputs.exists == 'true'
+        run: npm ci
+
+      - name: Typecheck
+        if: steps.detect.outputs.exists == 'true'
+        run: npm run typecheck --if-present
+
+      - name: Lint
+        if: steps.detect.outputs.exists == 'true'
+        run: npm run lint --if-present
+
+      - name: Unit tests
+        if: steps.detect.outputs.exists == 'true'
+        run: npm run test --if-present
+
+      - name: Pre-scaffold notice
+        if: steps.detect.outputs.exists == 'false'
+        run: echo "package.json 未作成（concept フェーズ）。scaffold 後に typecheck/lint/test が有効化されます。"
