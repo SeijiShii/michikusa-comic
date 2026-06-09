@@ -4,7 +4,7 @@
 **コマンド**: /flow:auto
 **対象**: PJ next-step 連続自動実行
 **実行者**: Claude (Opus 4.8)
-**状態**: 進行中
+**状態**: 中断（Class B GitHub remote push を人間にハンドオフ、gh 未インストール）
 **含まれる decision**: D20260609-012 〜 (反復ごとに追記)
 **ファイル**: `D20260609_002_resume_continuous.md`
 
