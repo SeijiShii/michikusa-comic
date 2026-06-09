@@ -15,6 +15,7 @@
 | 002 | 002_feedback_PLAN.md | PLAN | 設計済 | 2026-06-09 | FeedbackWidget, 2 Phase |
 | 003 | 003_feedback_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | scrub二重, cov 80% |
 | 004 | 004_feedback_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | 全画面到達, PII漏洩0 |
+| 101 | 101_feedback_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | FeedbackWidget(PII scrub SEC-002) 2 RTLテストgreen, API後続 |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |

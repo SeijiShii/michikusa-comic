@@ -15,6 +15,7 @@
 | 002 | 002_account_PLAN.md | PLAN | 設計済 | 2026-06-09 | delete(cascade+purge)/link/cron, 3 Phase |
 | 003 | 003_account_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | 削除協調(DSR), cov 85% |
 | 004 | 004_account_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | 削除→db+R2残置0, 開示, Level1+2 |
+| 101 | 101_account_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | DeleteAllData UI(二段階確認/O54) 3 RTLテストgreen, 削除API後続 |
 
 ## 関連
 - 親 concept: `../concept.md` §1.3.1 account 行
