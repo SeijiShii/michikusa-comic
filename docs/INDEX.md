@@ -27,7 +27,7 @@
 ## 横断フォルダ
 | 優先度 | フォルダ | 状態 | 設計完了 | INDEX |
 |---|---|---|---|---|
-| 1 | [_shared/types](./_shared/types/) | 計画 | ❌ | [INDEX](./_shared/types/INDEX.md) |
+| 1 | [_shared/types](./_shared/types/) | 設計済 | ✅ 2026-06-09 | [INDEX](./_shared/types/INDEX.md) |
 | 1 | [_shared/helpers](./_shared/helpers/) | 計画 | ❌ | [INDEX](./_shared/helpers/INDEX.md) |
 | 1 | [_shared/db](./_shared/db/) | 計画 | ❌ | [INDEX](./_shared/db/INDEX.md) |
 | 2 | [_shared/auth](./_shared/auth/) | 計画 | ❌ | [INDEX](./_shared/auth/INDEX.md) |

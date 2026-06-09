@@ -11,7 +11,10 @@
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature _shared/types` で生成) |
+| 001 | 001__shared_types_SPEC.md | SPEC | 設計済 | 2026-06-09 | Zod スキーマ単一ソース + infer 型 |
+| 002 | 002__shared_types_PLAN.md | PLAN | 設計済 | 2026-06-09 | src/types/ 5 ファイル、3 Phase |
+| 003 | 003__shared_types_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | parse 正常/異常/境界、cov 90% |
+| (E2E) | — | — | skip | — | cross-cutting のためスキップ |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 types 行
