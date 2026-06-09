@@ -11,7 +11,10 @@ AI 4 コマ生成（コマ割り提案 + セリフ案 + 絵柄 stylize）+ ア�
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature compose` で生成) |
+| 001 | 001_compose_SPEC.md | SPEC | 設計済 | 2026-06-09 | AI 4コマ生成+アプリ側セリフ合成([論点-001])+編集+保存, SEC-003 |
+| 002 | 002_compose_PLAN.md | PLAN | 設計済 | 2026-06-09 | ComposeScreen/PanelCanvas, 4 Phase |
+| 003 | 003_compose_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | rate limit/合成/XSS, cov 80% |
+| 004 | 004_compose_E2E_TEST.md | E2E_TEST | 設計済 | 2026-06-09 | 生成→保存, O45進捗, Level1-3 |
 
 ## サブフォルダ（改修・バグ修正・クレーム判定履歴）
 | パス | 種別 | issue/slug | 状態 | 概要 | INDEX |

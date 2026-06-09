@@ -16,7 +16,7 @@
 |---|---|---|---|---|---|---|---|---|
 | 3 | ❌ | [capture](./capture/) | 設計済 | ✅ 2026-06-09 | 0 | 0 | 0 | [INDEX](./capture/INDEX.md) |
 | 3 | ❌ | [legal](./legal/) | 設計済 | ✅ 2026-06-09 | 0 | 0 | 0 | [INDEX](./legal/INDEX.md) |
-| 4 | ❌ | [compose](./compose/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./compose/INDEX.md) |
+| 4 | ❌ | [compose](./compose/) | 設計済 | ✅ 2026-06-09 | 0 | 0 | 0 | [INDEX](./compose/INDEX.md) |
 | 4 | ❌ | [gallery](./gallery/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./gallery/INDEX.md) |
 | 5 | ❌ | [collection](./collection/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./collection/INDEX.md) |
 | 5 | ❌ | [share](./share/) | 計画 | ❌ | 0 | 0 | 0 | [INDEX](./share/INDEX.md) |
