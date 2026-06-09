@@ -5,6 +5,7 @@ import { GalleryScreen } from "../features/gallery/GalleryScreen.js";
 import { DeleteAllData } from "../features/account/DeleteAllData.js";
 import { FeedbackWidget } from "../features/feedback/FeedbackWidget.js";
 import { PrivacyPolicy } from "../features/legal/PrivacyPolicy.js";
+import { submitFeedback, deleteAllData } from "../hooks/api.js";
 
 export type Route = "/" | "/gallery" | "/account" | "/legal/privacy" | "/legal/terms" | "/legal/specified-commercial-transactions";
 
@@ -32,11 +33,11 @@ export function App() {
           <GalleryScreen comics={[]} onOpen={(id) => { void id; /* TODO: useComics (db/api) */ }} />
         )}
         {route === "/account" && (
-          <DeleteAllData onConfirmDelete={() => { /* TODO: api/account/delete (db cascade + R2 purge, release) */ }} />
+          <DeleteAllData onConfirmDelete={() => { void deleteAllData().then(() => nav("/")); }} />
         )}
         {route.startsWith("/legal") && <PrivacyPolicy />}
       </main>
-      <FeedbackWidget route={route} appVersion={APP_VERSION} onSend={(p) => { void p; /* TODO: api/feedback */ }} />
+      <FeedbackWidget route={route} appVersion={APP_VERSION} onSend={(p) => { void submitFeedback(p); }} />
       <LegalFooter onNavigate={nav} />
     </div>
   );

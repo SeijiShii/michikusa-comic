@@ -73,13 +73,12 @@
 ## 5. 現在地カーソル
 
 <!-- AUTO-GENERATED:BEGIN scenario-cursor -->
-- 現在フェーズ: Phase 3 (実装) — **no-key Class A 基盤を全実装、Release gate (P4.7) 到達**
-- 進行中ターゲット: Release 工程（実キー FILL + SDK 統合検証 + デプロイ）= Class C/B、要人間
+- 現在フェーズ: Phase 3 (実装) — **統合レイヤ完了、実ビルド+デプロイ可能、正当な Release gate 到達**
+- 進行中ターゲット: Release 工程（実キー FILL + 実サービス検証 + デプロイ）= Class C/B、要人間
 - 最終更新セッション: D20260609_009_resume_continuous
 - 最終更新時刻: 2026-06-09
-- 完了フェーズ: [Phase 1 概念設計, Phase 1.5 デザイン SoT, Phase 2 機能設計(全18), Phase 3 no-key 実装(バックエンド検証可能コア + P4.46 ゲスト経路 + 全9機能UI + app-shell 合成、70テスト green)]
-- 次の推奨アクション: **/flow:release**（実キー FILL → SDK 統合(Clerk/R2/Stripe/AI/Neon)検証 → ローカル実機確認 → デプロイ、Class C/B = 要人間）。並行: GitHub remote push（Phase 1 残）。残: 実 SDK glue + 統合 E2E（実キーで verify）
-<!-- AUTO-GENERATED:END scenario-cursor -->
+- 完了フェーズ: [Phase 1, 1.5, Phase 2(全18設計), Phase 3 no-key 実装(バックエンドコア + P4.46 + 全9機能UI + app-shell + 統合レイヤ: SDKアダプタ/repos/6 api関数/deploy scaffold, 78テスト green, vite/vercel build green, 全bundle import OK)]
+- 次の推奨アクション: **/flow:release**（実キー FILL → 実 Clerk/Neon/R2/Stripe/AI 検証 → デプロイ、Class C/B = 要人間）。app は build-ready (CF-20260609-002 ゲート充足)、残りは実キー検証のみ
 
 ## 6. 変更履歴
 
