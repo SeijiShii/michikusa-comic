@@ -15,6 +15,7 @@ DB スキーマ・マイグレーション（Neon Postgres + Drizzle スキー�
 | 002 | 002__shared_db_PLAN.md | PLAN | 設計済 | 2026-06-09 | src/db/ 5 ファイル、3 Phase |
 | 003 | 003__shared_db_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | test DB、cascade/一意/FK、cov 80% |
 | (E2E) | — | — | skip | — | cross-cutting スキップ |
+| 101 | 101__shared_db_IMPL_REPORT.md | IMPL_REPORT | 実装済 | 2026-06-09 | 5テスト green(pglite), cascade削除(DSR)検証 |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 db 行
