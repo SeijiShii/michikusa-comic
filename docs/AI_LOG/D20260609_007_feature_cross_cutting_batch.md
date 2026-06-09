@@ -19,6 +19,7 @@
 | D20260609-027 | _shared/helpers | 日付/エリア/画像/検証/PII scrub 純関数、stripGeoExif(SEC-002) | 完了 |
 | D20260609-028 | _shared/auth | Clerk ゲスト→段階認証(O22) + owner resolver(SEC-004) + 本番経路(P4.46) | 完了 |
 | D20260609-029 | _shared/storage | R2 署名URL/キー ownerId境界(SEC-004)/purgeOwner(DSR) | 完了 |
+| D20260609-030 | _shared/ai | Vision+Gemini ラッパ, 差別化プロンプト, SEC-003 レート制限, コスト積算 | 完了 |
 
 ## Decisions
 ```yaml

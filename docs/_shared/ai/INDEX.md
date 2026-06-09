@@ -11,7 +11,10 @@
 ## ファイル一覧（番号順）
 | 番号 | ファイル | 種別 | 状態 | 最終更新 | 短い説明 |
 |---|---|---|---|---|---|
-| (まだ設計文書なし。`/flow:feature _shared/ai` で生成) |
+| 001 | 001__shared_ai_SPEC.md | SPEC | 設計済 | 2026-06-09 | Vision+Gemini ラッパ, 差別化プロンプト, SEC-003 レート制限, コスト積算 |
+| 002 | 002__shared_ai_PLAN.md | PLAN | 設計済 | 2026-06-09 | interface→mock→実SDK, 3 Phase |
+| 003 | 003__shared_ai_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | SDK mock, レート/フォールバック, cov 80% |
+| (E2E) | — | — | skip | — | compose 側 |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 ai 行
