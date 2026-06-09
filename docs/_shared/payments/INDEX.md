@@ -15,6 +15,7 @@
 | 002 | 002__shared_payments_PLAN.md | PLAN | 設計済 | 2026-06-09 | checkout/webhook, 3 Phase |
 | 003 | 003__shared_payments_UNIT_TEST.md | UNIT_TEST | 設計済 | 2026-06-09 | 署名NG 400, 冪等, cov 85% |
 | (E2E) | — | — | skip | — | export 側 |
+| 101 | 101__shared_payments_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | webhook冪等/署名 3テストgreen, Stripe SDK後続 |
 
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 payments 行

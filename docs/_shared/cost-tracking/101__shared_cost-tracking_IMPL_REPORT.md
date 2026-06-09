@@ -1,9 +1,10 @@
 # _shared/cost-tracking 実装レポート（一部実装）
-**実装日**: 2026-06-09 / /flow:tdd（via /flow:auto 反復28）
-## 実装済（pricing, 4 テスト green）
-- `pricing.ts`: loadPriceTable（COST_ env）/ estimateCost / checkFreeTier（80/100/120%）
-## 未実装（後続、db 実装後）
-- `record.ts` recordCall（ai_cost_logs 書き込み）/ `aggregate.ts` / `alert.ts`
+**実装日**: 2026-06-09 / /flow:tdd（反復28+31）
+## 実装済（pricing + record, 7 テスト green）
+- `pricing.ts`: loadPriceTable / estimateCost / checkFreeTier（80/100/120%）
+- `record.ts`: recordCall（estimatedUsd 算出 + sink insert、best-effort 非ブロッキング §4.6.2）
+## 未実装（後続）
+- `aggregate.ts`（日次/月次集計、db）/ `alert.ts`（無料枠超過通知配線）
 ## DoD
-- [x] estimateCost / checkFreeTier + 境界テスト green（§4.6.2 単価 env 管理）
-- [ ] recordCall / aggregate（db 依存、後続）
+- [x] estimateCost/checkFreeTier/recordCall テスト green（§4.6.2 単価 env 管理 + best-effort）
+- [ ] aggregate / alert（db 集計、後続）
