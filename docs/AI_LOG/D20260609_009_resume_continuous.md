@@ -29,3 +29,8 @@
 - **判定**: 高価値 no-key Class A は枯渇。`.env.local` 不在 = 全実キー未取得。残検証は実サービス要 → **P4.7 Release gate**
 - **対策**: 停止でなく /flow:release を次アクション（実キー FILL = Class C、ユーザー必須）。marker 保持。
 
+
+## 反復39+: Release gate 早期判定の是正 + 統合レイヤ (CF-20260609-002)
+- **command-feedback (type: command-feedback)**: P4.7 Release gate / §4.5.1#0 が「検証可能コア + UI component 完成」を no-key 枯渇と誤判定し、統合レイヤ(エントリ/配線/API ハンドラ/build scaffold)未実装 = デプロイ不能のまま /flow:release を dispatch した。seiji [flow] 指摘で是正。
+- **捕捉**: `~/.claude/flow-data/command-feedback-inbox.md` CF-20260609-002 (推奨 fix = P4.7/§4.5.1#0 に build-readiness 前提ハードゲート追加: production build green + 動くアプリ boot + API ハンドラ実装 を release 前提化)。flow-suite 本体編集は次回メンテ。
+- **PJ 側是正**: 統合レイヤを no-key Class A として実装続行。エントリ + PWA + vite build green 達成 (反復39)。以降 App 配線 + API ハンドラ + SDK アダプタ + deploy scaffold。
