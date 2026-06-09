@@ -40,7 +40,8 @@
 ## 見積もり
 | ファイル | 種別 | 最終更新 |
 |---|---|---|
-| [initial_20260609.md](./estimates/initial_20260609.md) | 全体・初回（rough） | 2026-06-09 |
+| [initial_20260609.md](./estimates/initial_20260609.md) | 全体・初回（rough、±300%） | 2026-06-09 |
+| [refined_20260609.md](./estimates/refined_20260609.md) | 全体・refined（±100%、Std 100f/10.2K LOC/30h） | 2026-06-09 |
 
 ## AI アクセスガイド
 - プロジェクト全体を理解したい → `concept.md` / `DOC_MAP.md`

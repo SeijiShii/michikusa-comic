@@ -26,7 +26,10 @@
 | D20260609-012b | 1.5 | dispatch | /flow:secure 完了 → SEC-001..005 要件化 | 完了 |
 | D20260609-022 | 3 | §3.0 estimate 1回目 | /flow:estimate（initial_20260609.md） | 完了 |
 | D20260609-023 | 4 | P4.4(a) Design gate | /flow:design --system-only（design-system.md） | 完了 |
-| D20260609-024 | 5 | 停止条件2（Class B） | GitHub リポジトリ整備（remote+push）= 1-decision pause | pause |
+| D20260609-024 | 5 | 停止条件2（Class B） | GitHub リポジトリ整備（remote+push）= 1-decision pause | pause→resume |
+| (反復6-13) | 6-13 | Phase 2 横断設計 | types/db/helpers/auth/storage/ai/cost-tracking/payments | 完了 |
+| (反復14-23) | 14-23 | Phase 2 機能設計 | capture/legal/compose/gallery/collection/share/export/feedback/account/app-shell | 完了 |
+| D20260609-043 | 24 | §3.0 estimate 2回目 | /flow:estimate refined（refined_20260609.md） | 完了 |
 
 ## ループ pause 記録（反復 5）
 
