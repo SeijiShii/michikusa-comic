@@ -1,0 +1,25 @@
+# 改修 #001 ドキュメントインデックス
+
+**issue / slug**: 001 / guest-jwt-and-link
+**実施日**: 2026-06-18
+**状態**: 設計完了（tdd 実装待ち）
+
+<!-- auto-generated-start -->
+
+## ファイル一覧
+| 番号 | ファイル | 種別 | 最終更新 |
+|---|---|---|---|
+| 001 | 001_REVISE_SPEC.md | 変更仕様 | 2026-06-18 |
+| 002 | 002_REVISE_PLAN.md | 変更計画 | 2026-06-18 |
+| 003 | 003_REVISE_UNIT_TEST.md | 単体テスト計画 | 2026-06-18 |
+| 004 | 004_REVISE_E2E_TEST.md | E2E テスト計画 | 2026-06-18 |
+
+## 関連
+- 親機能 INDEX: `../INDEX.md`
+- 基準 SPEC: `../001__shared_auth_SPEC.md`
+- 根拠: `../../AUDIT_20260618_0807.md`
+
+<!-- auto-generated-end -->
+
+<!-- user-edit-start -->
+<!-- user-edit-end -->

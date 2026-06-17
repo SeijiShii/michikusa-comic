@@ -17,6 +17,11 @@
 | (E2E) | — | — | skip | — | capture/account 側でカバー |
 | 101 | 101__shared_auth_IMPL_REPORT.md | IMPL_REPORT | 一部実装 | 2026-06-09 | owner resolver 6テストgreen, ゲスト本番経路は release |
 
+## 改修サブフォルダ
+| サブフォルダ | issue | 状態 | 概要 |
+|---|---|---|---|
+| [revise_001_20260618_guest-jwt-and-link](./revise_001_20260618_guest-jwt-and-link/) | 001 | 設計完了 | ゲスト JWT 永続(owner churn 根絶) + 段階認証連携/サインアウト動線(O22 B/D、audit High) |
+
 ## 関連
 - 親 concept: `../../concept.md` §1.3.2 auth 行
 - **依存**: _shared/db
