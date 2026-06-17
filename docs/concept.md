@@ -400,6 +400,7 @@ public/               # PWA manifest / service worker / アイコン
 ## 8. 未決事項（論点リスト）
 
 ### [論点-001] セリフ/コマ割りの「画像焼き込み」vs「アプリ合成」最終線引き
+- **status**: `resolved`（2026-06-09 design で案 A 採用 = アプリ側合成。`design/design-system.md` L50「可変（アプリ側合成、[論点-001]）」で確定）
 - **影響範囲**: compose / share / _shared/ai / design
 - **詰めるべき問い**: どこまでを AI 生成画像に含め、どこからアプリ側 SVG/Canvas 合成にするか（吹き出し形状、コマ枠、フォント、書き出し時のレンダリング）
 - **候補案**:
@@ -410,6 +411,7 @@ public/               # PWA manifest / service worker / アイコン
 - **担当**: 本人
 
 ### [論点-002] 1 作品あたり生成コスト上限・解像度段階化・キャッシュ方針
+- **status**: `resolved`（2026-06-09 compose/export 設計で案 A 採用 = 2 段階解像度。`compose/001_SPEC` L46「プレビューは低解像度、書き出し時に高解像度」+ `export/001_SPEC` で確定）
 - **影響範囲**: _shared/ai / _shared/cost-tracking / compose / export
 - **詰めるべき問い**: プレビューは低解像度、高画質書き出し時のみ高解像度再生成にするか／生成回数上限／同一写真の再生成キャッシュ
 - **候補案**:
@@ -420,6 +422,7 @@ public/               # PWA manifest / service worker / アイコン
 - **担当**: 本人
 
 ### [論点-003] 取り込み写真の著作権・肖像権・生成物の権利帰属 + シェア時注意喚起
+- **status**: `resolved`（2026-06-09 legal/capture 設計で案 A 採用 = 規約で権利帰属（ユーザー）+ 自己責任 + シェア前注意喚起。`legal/001_SPEC` L25 で確定。自動ぼかし（案 B）は v2）
 - **影響範囲**: §3 NFR / §9 法務 / capture / share / legal
 - **詰めるべき問い**: 第三者・店舗看板・通行人・商標が写る写真の扱い、生成物の権利帰属（ユーザー帰属を規約明記）、シェア前の注意喚起 UI の要否・文言
 - **候補案**:
