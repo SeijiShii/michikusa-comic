@@ -1,25 +1,32 @@
 import { describe, it, expect, vi } from "vitest";
-import { establishGuestSession, type ClerkBackend } from "./guestSession.js";
+import { provisionGuest, type GuestStoreDeps } from "./guestSession.js";
+import { verifyGuestToken, isGuestSub } from "./guestToken.js";
 import { makeOwnerResolver, type SessionProvider } from "./owner.js";
 
-// 本番経路のロジックを mock Clerk で検証 (実キー検証は release)
-describe("establishGuestSession (P4.46 本番経路)", () => {
-  const clerk: ClerkBackend = {
-    createAnonymousUser: vi.fn(async () => ({ id: "guest-xyz" })),
-    createSignInToken: vi.fn(async (id) => ({ token: `ticket-${id}` })),
-  };
-  it("匿名 user 発行 + sign-in ticket 発行", async () => {
-    const t = await establishGuestSession(clerk);
-    expect(t.userId).toBe("guest-xyz");
-    expect(t.token).toBe("ticket-guest-xyz");
-    expect(clerk.createAnonymousUser).toHaveBeenCalledOnce();
-    expect(clerk.createSignInToken).toHaveBeenCalledWith("guest-xyz");
+const SECRET = "test-secret-abc";
+
+// O22(D) churn 根絶: provisionGuest は guest JWT を発行し Clerk createUser を呼ばない
+describe("provisionGuest (P4.46 本番経路 / scaffold §1.7)", () => {
+  it("U2: 匿名行 upsert + guest JWT 発行、Clerk createUser は呼ばない", async () => {
+    const deps: GuestStoreDeps = { upsertGuestRow: vi.fn(async () => {}), secret: SECRET };
+    const g = await provisionGuest(deps);
+    expect(isGuestSub(g.sub)).toBe(true);
+    expect(deps.upsertGuestRow).toHaveBeenCalledWith(g.sub);
+    expect(verifyGuestToken(g.guestToken, SECRET)).toBe(g.sub);
   });
-  it("確立したゲストセッション→保護 API が authed owner で通る(200相当, 401でない)", async () => {
-    const t = await establishGuestSession(clerk);
-    // 確立後、セッションは t.userId を返す (ticket 確立をシミュレート)
-    const established: SessionProvider = { getOwnerId: async () => t.userId };
+
+  it("M2: guest JWT の sub → 保護 API が authed owner で通る (401 でない)", async () => {
+    const deps: GuestStoreDeps = { upsertGuestRow: vi.fn(async () => {}), secret: SECRET };
+    const g = await provisionGuest(deps);
+    const established: SessionProvider = { getOwnerId: async () => g.sub };
     const owner = await makeOwnerResolver(established).requireOwner();
-    expect(owner).toBe("guest-xyz"); // 401 でなく authed owner
+    expect(owner).toBe(g.sub);
+  });
+
+  it("D1: provision ごとに新規 sub (再利用は guestStore が担う、U5)", async () => {
+    const deps: GuestStoreDeps = { upsertGuestRow: vi.fn(async () => {}), secret: SECRET };
+    const a = await provisionGuest(deps);
+    const b = await provisionGuest(deps);
+    expect(a.sub).not.toBe(b.sub);
   });
 });

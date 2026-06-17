@@ -1,23 +1,26 @@
-// ゲストセッション確立の本番経路 (P4.46 ハードゲート、Clerk scaffold パターン)
-// 実 Clerk backend は ClerkBackend interface で注入 (release で実 SDK + 実キー)。
-// stub ではなく「本番で実セッションが張れる経路の実コード」を表現する。
+// ゲストセッション確立の本番経路 (P4.46 + O22(D) owner churn 根絶、revise_001)。
+// scaffold §1.7: owner-scoped local-first のため Clerk ticket 方式 (旧 establishGuestSession) は撤去。
+// サーバ自前署名 guest JWT を発行し、owner = guest JWT の sub (Clerk セッション非依存)。
+// → トークン失効/リロードでも owner が安定 = データ orphan 化が原理的に起きない。
+import { genGuestSub, signGuestToken, type SignOpts } from "./guestToken.js";
 
-export interface ClerkBackend {
-  // server: 匿名 user を発行
-  createAnonymousUser(): Promise<{ id: string }>;
-  // server: sign-in token (ticket) を発行 → フロントが signIn.create({strategy:'ticket'}) で確立
-  createSignInToken(userId: string): Promise<{ token: string }>;
+// 匿名 user 行を DB に upsert する依存 (injectable、実 DB は release で注入)
+export interface GuestStoreDeps {
+  upsertGuestRow(sub: string): Promise<void>;
+  secret: string;
+  signOpts?: SignOpts;
 }
 
-export interface GuestSessionTicket { userId: string; token: string; }
-
-// establishGuestSession — 匿名 user 発行 + sign-in ticket 発行 (本番経路、O22/P4.46)
-export async function establishGuestSession(clerk: ClerkBackend): Promise<GuestSessionTicket> {
-  const user = await clerk.createAnonymousUser();
-  const { token } = await clerk.createSignInToken(user.id);
-  return { userId: user.id, token };
+export interface ProvisionedGuest {
+  sub: string;
+  guestToken: string;
 }
 
-// フロント側は establishGuestSession の token で signIn.create({strategy:'ticket', ticket: token})
-// を実行 → 実セッション確立 → 以降 withOwner 保護 API が authed owner で 200。
-// ※ 実 Clerk + 実キーでの「匿名→authed 200」結合検証は /flow:release で実施 (P4.46 DoD)。
+// provisionGuest — sub 生成 → DB 匿名行 upsert → guest JWT 署名 → 返却。
+// ⚠️ Clerk createUser は呼ばない (MAU 非消費、scaffold §1.7)。
+export async function provisionGuest(deps: GuestStoreDeps): Promise<ProvisionedGuest> {
+  const sub = genGuestSub();
+  await deps.upsertGuestRow(sub);
+  const guestToken = signGuestToken(sub, deps.secret, deps.signOpts);
+  return { sub, guestToken };
+}
