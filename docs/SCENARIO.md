@@ -73,12 +73,12 @@
 ## 5. 現在地カーソル
 
 <!-- AUTO-GENERATED:BEGIN scenario-cursor -->
-- 現在フェーズ: Phase 3 (実装) — **統合レイヤ完了、実ビルド+デプロイ可能、正当な Release gate 到達**
+- 現在フェーズ: Phase 3 完了 → Phase 4 公開準備 — **release-pre 監査(§3.0c)完了 + audit High 全是正済、正当な Release gate 到達**
 - 進行中ターゲット: Release 工程（実キー FILL + 実サービス検証 + デプロイ）= Class C/B、要人間
-- 最終更新セッション: D20260609_009_resume_continuous
-- 最終更新時刻: 2026-06-09
-- 完了フェーズ: [Phase 1, 1.5, Phase 2(全18設計), Phase 3 no-key 実装(バックエンドコア + P4.46 + 全9機能UI + app-shell + 統合レイヤ: SDKアダプタ/repos/6 api関数/deploy scaffold, 78テスト green, vite/vercel build green, 全bundle import OK)]
-- 次の推奨アクション: **/flow:release**（実キー FILL → 実 Clerk/Neon/R2/Stripe/AI 検証 → デプロイ、Class C/B = 要人間）。app は build-ready (CF-20260609-002 ゲート充足)、残りは実キー検証のみ
+- 最終更新セッション: D20260618_001_resume_continuous
+- 最終更新時刻: 2026-06-18
+- 完了フェーズ: [Phase 1, 1.5, Phase 2(全18設計), Phase 3 no-key 実装(108テスト green, vite build green), Phase 4 release-pre 監査(full audit + secure; audit High 3=O22(B/D) auth churn+段階認証+favicon/PWA icon 404 を全是正 b982498/d9f0b9d; deps dev-only; 論点-001/002/003 resolved)]
+- 次の推奨アクション: **/flow:release**（実キー FILL → 実 Clerk/Neon/R2/Stripe/AI 検証 → デプロイ、Class C/B = 要人間）。no-key Class A 枯渇証明済 + §3.0c release-pre ゲート充足、残りは実キー検証のみ
 
 ## 6. 変更履歴
 

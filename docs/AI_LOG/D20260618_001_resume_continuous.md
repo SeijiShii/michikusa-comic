@@ -18,3 +18,26 @@
 - SCENARIO §5: Phase 3 実装完了、Release 工程 (Class C/B) が次
 
 ## 反復ログ
+| 反復 | action | 結果 |
+|---|---|---|
+| 1 | §3.0c release-pre full audit (AUDIT_20260618_0807) | Critical 0 / High 3 (O22 B/D auth, O56 favicon) / Med 1 / Low 1 |
+| 2 | drift シュート: /flow:revise _shared/auth 001 | guest JWT 永続 + 段階認証/サインアウト 設計完了 |
+| 3 | P4.2: /flow:tdd _shared/auth 001 | 実装 108テスト green (+30)、build green |
+| 4 | drift シュート: O56 PWA アイコン実体配置 | apple-touch-icon + icon-192/512/maskable 生成、全参照解決 |
+| 5 | §3.0c pair: /flow:secure (auth面+deps) | 新規Critical/High 0、deps全件dev-only accepted |
+| 6 | 論点-001/002/003 status=resolved (concept UPDATE) | Low closed |
+| 7 | release-pre 再監査 (AUDIT_20260618_0827) | High 3 + Low 1 全 closed、§3.0c ゲート充足、HEAD fresh |
+| 8 | §4.5.1#0 no-key 枯渇チェック | 枯渇証明 (headless smoke/keyless render 安全、build green)、.env 不在 → P4.7 Release gate |
+
+## §4.5.1#0 no-key/Class-A 枯渇チェック (反復8)
+- 列挙した no-key 変種と可否:
+  - audit/secure (release-pre) → ✅ 完了、High 全是正
+  - O22 churn/段階認証 実装 → ✅ 108テスト green
+  - PWA icons / 論点 cleanup → ✅ 完了
+  - ローカル headless E2E → headless browser 未install。代替: App smoke 5テスト + 起動時 env 直読みなし = keyless white-screen 安全、vite build green で担保
+  - 残: 実 SDK binding (Clerk/Neon/R2/Stripe/AI) + 統合検証 → 実キーなしで meaningful verify 不能
+- 判定: 高価値 no-key Class A 枯渇。.env.local / .env.production.local 不在 = 全実キー未取得 → P4.7 Release gate
+- 対策: 停止でなく /flow:release dispatch (実キー FILL = Class C 人間必須)。marker 保持。
+
+## 状態: Release gate (P4.7) で /flow:release dispatch (実キー FILL = Class C 人間必須の正当な対話境界)
+
