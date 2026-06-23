@@ -10,7 +10,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       # コードが未 scaffold の間は green を維持（package.json 出現後に各ステップが有効化）
       - name: Detect package.json
